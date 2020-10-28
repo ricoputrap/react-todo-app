@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/layout/Header';
 import Home from './components/pages/Home';
-// import Todos from './components/Todos';
 import axios from 'axios';
 import './App.css';
 
@@ -20,9 +19,6 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Home todos={ this.state.todos } />
-        {/* <React.Fragment>
-          <Todos todos={ this.state.todos } />
-        </React.Fragment> */}
       </div>
     )
   }

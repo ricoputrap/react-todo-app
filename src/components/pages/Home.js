@@ -1,4 +1,4 @@
-import Todos from '../Todos';
+import Todos from '../todos/Todos';
 
 function Home(props) {
     return (

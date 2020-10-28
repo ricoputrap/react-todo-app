@@ -1,0 +1,19 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item p {
+    display: inline;
+    margin-left: 1rem;
+}
+
+.item button:nth-last-of-type(2) {
+    margin-right: 0.5rem;
+}

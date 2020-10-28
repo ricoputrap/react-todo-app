@@ -1,4 +1,5 @@
 import React from 'react';
+import "./style/todo-item.css";
 // import PropTypes from 'prop-types';
 
 class TodoItem extends React.Component {
@@ -21,14 +22,15 @@ class TodoItem extends React.Component {
     render() {
         const { title } = this.props.todo;
         return (
-            <div>
-                <input type="checkbox" onChange={ this.markComplete } />
-                <p>{ title }</p>
+            <div className="item">
+                <div>
+                    <input type="checkbox" onChange={ this.markComplete } />
+                    <p>{ title }</p>
+                </div>
                 <div>
                     <button className="btn btn--tosca" onClick={ this.editTodo }>e</button>
                     <button className="btn btn--red" onClick={ this.delTodo }>x</button>
                 </div>
-                
             </div>
         )
     }
