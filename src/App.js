@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/layout/Header';
-import Todos from './components/Todos';
+import Home from './components/pages/Home';
+// import Todos from './components/Todos';
 import axios from 'axios';
 import './App.css';
 
@@ -18,9 +19,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <React.Fragment>
+        <Home todos={ this.state.todos } />
+        {/* <React.Fragment>
           <Todos todos={ this.state.todos } />
-        </React.Fragment>
+        </React.Fragment> */}
       </div>
     )
   }
