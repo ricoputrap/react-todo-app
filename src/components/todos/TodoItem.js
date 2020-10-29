@@ -28,10 +28,10 @@ class TodoItem extends React.Component {
                     <p style={ this.completedStyle() }>{ title }</p>
                 </div>
                 <div>
-                    <button className="btn-icon btn--tosca" >
+                    <button className="btn btn--icon btn--tosca" >
                         <img src={ pencilIcon } alt="edit-icon" onClick={ this.editTodo }/>
                     </button>
-                    <button className="btn-icon btn--red">
+                    <button className="btn btn--icon btn--red">
                         <img src={ trashIcon } alt="del-icon" onClick={ this.props.delTodo.bind(this, id) }/>
                     </button>
                 </div>
