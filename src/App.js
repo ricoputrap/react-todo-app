@@ -14,11 +14,22 @@ class App extends React.Component {
       .then(res => this.setState({ todos: res.data }))
   }
 
+  markComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo;
+      })
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Home todos={ this.state.todos } />
+        <Home todos={ this.state.todos } markComplete={ this.markComplete } />
       </div>
     )
   }

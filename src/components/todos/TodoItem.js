@@ -6,10 +6,10 @@ import trashIcon from '../../img/trash-icon.svg';
 // import PropTypes from 'prop-types';
 
 class TodoItem extends React.Component {
-    markComplete = (e) => {
-        console.log("COMPLETE");
-        console.log(this.props);
-        console.log(e);
+    completedStyle = () => {
+        return {
+            textDecoration: this.props.todo.completed ? 'line-through' : 'none'
+        }
     }
 
     editTodo = (e) => {
@@ -23,12 +23,12 @@ class TodoItem extends React.Component {
     }
 
     render() {
-        const { title } = this.props.todo;
+        const { id, title } = this.props.todo;
         return (
             <div className="item">
                 <div className="item__content">
-                    <input type="checkbox" onChange={ this.markComplete } />
-                    <p>{ title }</p>
+                    <input type="checkbox" onChange={ this.props.markComplete.bind(this, id) } />
+                    <p style={ this.completedStyle() }>{ title }</p>
                 </div>
                 <div>
                     <button className="btn-icon btn--tosca" >

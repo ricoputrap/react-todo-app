@@ -7,7 +7,10 @@ function Todos(props) {
         <section className="container">
             {
                 props.todos.map(todo => (
-                    <TodoItem key={ todo.id } todo={ todo } />
+                    <TodoItem 
+                        key={ todo.id } 
+                        todo={ todo }
+                        markComplete={ props.markComplete } />
                 ))
             }
         </section>
