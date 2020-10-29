@@ -6,7 +6,8 @@ function Home(props) {
         <main>
             <Todos 
                 todos={ props.todos }
-                markComplete={ props.markComplete } />
+                markComplete={ props.markComplete }
+                delTodo={ props.deleteTodo } />
         </main>
         
     )

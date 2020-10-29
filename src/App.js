@@ -25,11 +25,19 @@ class App extends React.Component {
     });
   }
 
+  deleteTodo = (id) => {
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then(res => this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) }));
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Home todos={ this.state.todos } markComplete={ this.markComplete } />
+        <Home 
+          todos={ this.state.todos } 
+          markComplete={ this.markComplete }
+          deleteTodo={ this.deleteTodo } />
       </div>
     )
   }

@@ -17,10 +17,7 @@ class TodoItem extends React.Component {
         console.log(e);
     }
 
-    delTodo = (e) => {
-        console.log("DELETE");
-        console.log(e);
-    }
+    
 
     render() {
         const { id, title } = this.props.todo;
@@ -35,7 +32,7 @@ class TodoItem extends React.Component {
                         <img src={ pencilIcon } alt="edit-icon" onClick={ this.editTodo }/>
                     </button>
                     <button className="btn-icon btn--red">
-                        <img src={ trashIcon } alt="del-icon" onClick={ this.delTodo }/>
+                        <img src={ trashIcon } alt="del-icon" onClick={ this.props.delTodo.bind(this, id) }/>
                     </button>
                 </div>
             </div>

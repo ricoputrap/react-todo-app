@@ -10,7 +10,8 @@ function Todos(props) {
                     <TodoItem 
                         key={ todo.id } 
                         todo={ todo }
-                        markComplete={ props.markComplete } />
+                        markComplete={ props.markComplete }
+                        delTodo={ props.delTodo } />
                 ))
             }
         </section>
