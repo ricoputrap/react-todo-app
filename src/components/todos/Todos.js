@@ -1,13 +1,17 @@
 import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
+import "./style/todos.css";
 
 function Todos(props) {
-    return props.todos.map(todo => (
-        // <p key={ todo.id }>{ todo.title }</p>
-        <TodoItem
-            key={ todo.id }
-            todo={ todo } />
-    ));
+    return (
+        <section className="container">
+            {
+                props.todos.map(todo => (
+                    <TodoItem key={ todo.id } todo={ todo } />
+                ))
+            }
+        </section>
+    );
 };
 
 Todos.propTypes = {
