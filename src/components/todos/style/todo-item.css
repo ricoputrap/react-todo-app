@@ -9,6 +9,7 @@
 .item__content {
     display: flex;
     align-items: center;
+    max-width: 75%;
 }
 
 .item:last-child {
@@ -28,7 +29,7 @@
 }
 
 @media (max-width: 600px) {
-    .item div:first-of-type {
+    .item__content {
         max-width: 70%;
     }
 }

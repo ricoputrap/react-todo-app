@@ -5,7 +5,7 @@ import "./styles/home.css";
 function Home(props) {
     return (
         <main>
-            <AddTodo />
+            <AddTodo addTodo={ props.addTodo }/>
             <Todos 
                 todos={ props.todos }
                 markComplete={ props.markComplete }

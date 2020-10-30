@@ -30,6 +30,14 @@ class App extends React.Component {
       .then(res => this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) }));
   }
 
+  addTodo = (title) => {
+    axios.post(`https://jsonplaceholder.typicode.com/todos`, {
+      title,
+      completed: false
+    })
+      .then(res => this.setState({ todos: [...this.state.todos, res.data]}));
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,7 +45,8 @@ class App extends React.Component {
         <Home 
           todos={ this.state.todos } 
           markComplete={ this.markComplete }
-          deleteTodo={ this.deleteTodo } />
+          deleteTodo={ this.deleteTodo }
+          addTodo={ this.addTodo } />
       </div>
     )
   }
