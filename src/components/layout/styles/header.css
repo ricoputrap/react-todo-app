@@ -1,0 +1,15 @@
+.header {
+    background: #3498DB;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.header__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__link:hover {
+    text-decoration: underline;
+}

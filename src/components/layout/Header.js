@@ -1,22 +1,16 @@
+import { Link } from 'react-router-dom';
+import './styles/header.css'
+
 function Header() {
     return (
-        <header style={ headerStyle }>
+        <header className="header">
             <h1>TODO APP</h1>
-            <p style={ linkStyle }>Home | Completed</p>
+            <span>
+                <Link to="/" className="header__link">Home</Link> | <Link to="/completed" className="header__link">Completed</Link>
+            </span>
         </header>
     )
 }
 
-const headerStyle = {
-    background: '#3498DB',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '1rem'
-}
-
-const linkStyle = {
-    textDecoration: 'none',
-    color: '#fff'
-}
 
 export default Header;
