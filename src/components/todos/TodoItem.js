@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import "./style/todo-item.css";
 // import pencilIcon from '../../img/pencil-icon.svg';
@@ -12,19 +13,18 @@ class TodoItem extends React.Component {
         }
     }
 
-    editTodo = (e) => {
-        console.log("EDIT");
-        console.log(e);
-    }
-
-    
-
     render() {
         const { id, title, completed } = this.props.todo;
         return (
             <div className="item">
                 <div className="item__content">
-                    <input type="checkbox" onChange={ this.props.markComplete.bind(this, id) } defaultChecked={ completed } />
+                    { this.props.canMarkComplete && 
+                        <input 
+                            type="checkbox"
+                            defaultChecked={ completed }
+                            onChange={ this.props.markComplete.bind(this, id) } />
+                    }
+                    
                     <p style={ this.completedStyle() }>{ title }</p>
                 </div>
                 <div>
@@ -38,6 +38,17 @@ class TodoItem extends React.Component {
             </div>
         )
     }
+}
+
+TodoItem.propTypes = {
+    todo: PropTypes.object.isRequired,
+    markComplete: PropTypes.func,
+    delTodo: PropTypes.func.isRequired,
+    canMarkComplete: PropTypes.bool,
+}
+
+TodoItem.defaultProps = {
+    canMarkComplete: true
 }
 
 export default TodoItem;
