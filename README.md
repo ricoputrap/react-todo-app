@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# TODO APP
+
+This project was developed for learning basic frontend web development using **React JS** and **React Router** to manage SPA routing in this app. It also used **Axios** for communicating with third-party API.
+
+### Features
+* View All Todos
+* View Completed Todos
+* Add Todo
+* Delete Todo
+
+### Tech Stacks
+* React JS - frontend web library
+* React Router - route management
+* Axios - API calls
+
+### Deployment
+[Vercel](https://vercel.com/)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
